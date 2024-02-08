@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slot Simulator|Phase 1</title>
+
+    <link href="css/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="relative">
+    <main class="h-full flex">
+      <div id="game_section" class="relative">
+        <div
+          class="flex items-center text-black w-full fixed top-0 space-x-4 bg-[#FF914D]"
+        >
+          <div
+            id="phase-1"
+            class="w-full text-center py-4 font-semibold text-lg text-black bg-[#D9D9D9] cursor-pointer active_phase"
+          >
+            Phase 1
+          </div>
+          <div
+            id="phase-2"
+            class="w-full text-center py-4 font-semibold text-lg text-black bg-[#D9D9D9] cursor-pointer"
+          >
+            Phase 2
+          </div>
+
+          <div
+            id="phase-2"
+            class="w-full text-center py-4 font-semibold text-lg text-black bg-slate-200 cursor-pointer"
+          >
+            Phase 3
+          </div>
+        </div>
+        <div id="pixi-container"></div>
+
+        <button
+          id="humbergar"
+          onclick="toggleSideBarFunc()"
+          class="block p-4 bg-white rounded-full absolute top-24 right-10"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.75 6.75a4.5 4.5 0 0 1-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 1 1-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 0 1 6.336-4.486l-3.276 3.276a3.004 3.004 0 0 0 2.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852Z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.867 19.125h.008v.008h-.008v-.008Z"
+            />
+          </svg>
+        </button>
+        <button
+          id="xicon"
+          onclick="toggleSideBarFunc()"
+          class="p-4 bg-white rounded-full absolute right-[572px] top-24 xicon-right hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        id="sidebar"
+        class="bg-white w-0 space-y-6 absolute right-0 top-0 hidden"
+      >
+        <p class="text-xl font-bold text-[#1b1b1b]">Slot Simulator</p>
+        <!-- background -->
+        <div class="bg-slate-100">
+          <button
+            class="section-btn"
+            onclick="toggleSideBarContent('background_section')"
+          >
+            <p class="font-semibold text-base">Background</p>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </button>
+
+          <div id="background_section" class="w-full p-4 hide_section flex-col">
+            <div>
+              <p class="block mb-2 text-md font-medium text-gray-900">
+                Single Image
+              </p>
+              <div class="flex items-center space-x-4">
+                <input
+                  id="imageBackground"
+                  class="px-2 py-1 w-full border-none outline-none focus:outline-none flex-grow"
+                  type="file"
+                />
+                <button onclick="changeBackground()" class="btn">Change</button>
+              </div>
+            </div>
+            <!-- Spine Image -->
+
+            <div class="">
+              <h3 class="font-semibold text-base mb-6">Spine Files</h3>
+
+              <div
+                class="p-4 text-gray-400 border border-gray-200 rounded w-full bg-white"
+              >
+                <div
+                  id="bg-drop-zone"
+                  class="relative flex flex-col text-gray-400 border border-gray-200 border-dashed rounded cursor-pointer"
+                >
+                  <div
+                    class="flex flex-col items-center justify-center py-10 text-center"
+                  >
+                    <svg
+                      class="w-6 h-6 mr-1 text-current-50"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                    <p class="m-0">Drag your files here</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-5" />
+            <!-- Background Size-->
+            <div class="">
+              <div class="space-y-6 py-10">
+                <div class="">
+                  <p class="block mb-2 text-sm font-medium text-gray-900">
+                    Background Size
+                  </p>
+
+                  <div class="flex items-center justify-between">
+                    <div
+                      class="flex items-center space-x-3 w-[48%] overflow-hidden"
+                    >
+                      <label
+                        for="bg-width"
+                        class="text-sm font-medium text-gray-900"
+                        >Width</label
+                      >
+                      <input
+                        type="text"
+                        id="bg-width"
+                        class="px-2 py-1 border-none outline-none focus:outline-none !w-[150px]"
+                      />
+                    </div>
+                    <div
+                      class="flex items-center space-x-3 w-[48%] overflow-hidden"
+                    >
+                      <label
+                        for="bg-height"
+                        class="text-sm font-medium text-gray-900"
+                        >Height</label
+                      >
+                      <input
+                        type="text"
+                        id="bg-height"
+                        class="px-2 py-1 border-none outline-none focus:outline-none !w-[150px]"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="">
+                  <p class="block mb-2 text-sm font-medium text-gray-900">
+                    Position
+                  </p>
+
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3 mr-2">
+                      <label
+                        for="bg-x-position"
+                        class="text-sm font-medium text-gray-900"
+                        >X</label
+                      >
+                      <input
+                        type="text"
+                        id="bg-x-position"
+                        class="px-2 py-1 border-none outline-none focus:outline-none"
+                      />
+                    </div>
+                    <div class="flex items-center space-x-3 ml-2">
+                      <label
+                        for="bg-y-position"
+                        class="text-sm font-medium text-gray-900"
+                        >Y</label
+                      >
+                      <input
+                        type="text"
+                        id="bg-y-position"
+                        class="px-2 py-1 border-none outline-none focus:outline-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <button onclick="changeBackgroundConfig()" class="btn w-full">
+                  Change
+                </button>
+              </div>
+
+              <div class="flex items-center">
+                <label for="logo"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- welcome text -->
+        <div class="bg-slate-100">
+          <button
+            class="section-btn"
+            onclick="toggleSideBarContent('welcome_section')"
+          >
+            <p class="font-semibold text-base">Welcome Text</p>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </button>
+
+          <div
+            id="welcome_section"
+            class="w-full p-4 space-y-4 hide_section flex-col"
+          >
+            <textarea
+              id="welcome-text"
+              rows="4"
+              class="block p-2.5 w-full text-sm bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 outline-none"
+            >
+Scegli il Jazz Club
+e scopri il numero di giri gratuiti
+          </textarea
+            >
+
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-3 mr-2">
+                <label
+                  for="x-position"
+                  class="text-sm font-medium text-gray-900"
+                  >X</label
+                >
+                <input
+                  type="text"
+                  id="welcome-text-x-position"
+                  class="px-2 py-1 border-none outline-none focus:outline-none"
+                />
+              </div>
+              <div class="flex items-center space-x-3 ml-2">
+                <label
+                  for="y-position"
+                  class="text-sm font-medium text-gray-900"
+                  >Y</label
+                >
+                <input
+                  type="text"
+                  id="welcome-text-y-position"
+                  class="px-2 py-1 border-none outline-none focus:outline-none"
+                />
+              </div>
+            </div>
+            <button onclick="changeWelcomeText()" class="btn w-full">
+              Change
+            </button>
+          </div>
+        </div>
+
+        <!-- continue section -->
+        <div class="bg-slate-100">
+          <button
+            class="section-btn"
+            onclick="toggleSideBarContent('continue_section')"
+          >
+            <p class="font-semibold text-base">Continue</p>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </button>
+
+          <div
+            id="continue_section"
+            class="p-4 hide_section flex-col space-y-4"
+          >
+            <!-- image -->
+            <div>
+              <label
+                for="image"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Normal Image</label
+              >
+              <div class="w-full">
+                <div class="flex items-center space-x-4">
+                  <input
+                    id="continue-image-1"
+                    class="px-2 py-1 w-full border-none outline-none focus:outline-none"
+                    type="file"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="continue-image-2"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Hover Image</label
+              >
+
+              <div class="w-full">
+                <div class="flex items-center space-x-4">
+                  <input
+                    id="continue-image-2"
+                    class="px-2 py-1 w-full border-none outline-none focus:outline-none"
+                    type="file"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="continue-image-3"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Click Image</label
+              >
+
+              <div class="w-full">
+                <div class="flex items-center space-x-4">
+                  <input
+                    id="continue-image-3"
+                    class="px-2 py-1 w-full border-none outline-none focus:outline-none"
+                    type="file"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <button onclick="changeButton()" class="btn my-2">Change</button>
+
+            <!-- text -->
+            <div class="mt-4">
+              <label
+                for="continue-text"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Text</label
+              >
+
+              <input
+                id="continue-text"
+                class="px-2 py-1 w-full border-none outline-none focus:outline-none"
+                value="CONTINUA"
+                type="text"
+              />
+            </div>
+
+            <!-- positions -->
+            <div class="mt-4">
+              <p class="block mb-2 text-sm font-medium text-gray-900">
+                Position
+              </p>
+
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3 mr-2">
+                  <label
+                    for="continue-text-x-position"
+                    class="text-sm font-medium text-gray-900"
+                    >X</label
+                  >
+                  <input
+                    type="text"
+                    id="continue-text-x-position"
+                    class="px-2 py-1 border-none outline-none focus:outline-none"
+                  />
+                </div>
+                <div class="flex items-center space-x-3 ml-2">
+                  <label
+                    for="continue-text-y-position"
+                    class="text-sm font-medium text-gray-900"
+                    >Y</label
+                  >
+                  <input
+                    type="text"
+                    id="continue-text-y-position"
+                    class="px-2 py-1 border-none outline-none focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              <button onclick="changeContinueText()" class="btn mt-6 w-full">
+                Change
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- logos -->
+        <div class="bg-slate-100">
+          <button
+            class="section-btn"
+            onclick="toggleSideBarContent('logos_section')"
+          >
+            <p class="font-semibold text-base">Logos</p>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </button>
+          <div id="logos_section" class="p-4 pb-0 hide_section flex-col"></div>
+        </div>
+
+        <!-- drope zone -->
+
+        <div class="">
+          <h3 class="font-semibold text-base mb-6">Drag to add logo</h3>
+
+          <div class="p-4 text-gray-400 border border-gray-200 rounded w-full">
+            <div
+              id="drop-zone"
+              class="relative flex flex-col text-gray-400 border border-gray-200 border-dashed rounded cursor-pointer"
+            >
+              <div
+                class="flex flex-col items-center justify-center py-10 text-center"
+              >
+                <svg
+                  class="w-6 h-6 mr-1 text-current-50"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                <p class="m-0">Drag your files here or click in this area.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <button
+            onclick="changePhase()"
+            class="text-lg font-medium text-white bg-indigo-500 px-10 py-4 rounded-[100px]"
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="./js/config.js"></script>
+    <script src="./js/logic.js"></script>
+    <script src="https://pixijs.download/v7.3.3/pixi.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pixi-spine@4.0.4/dist/pixi-spine.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+    <script src="js/game.js"></script>
+    <!-- <script src="../js/game.min.js"></script> -->
+  </body>
+</html>

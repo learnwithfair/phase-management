@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link href="css/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="w-full h-full min-h-screen p-6 text-[#1b1b1b] space-y-10">
+      <div>
+        <button id="addSlotBtn" class="block ml-auto">
+          <div class="btn flex items-center space-x-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 4.5v15m7.5-7.5h-15"
+              />
+            </svg>
+
+            <p class="">Add New Slot</p>
+          </div>
+        </button>
+
+        <!-- modal -->
+        <div class="">
+          <dialog data-bs-backdrop="static" id="favDialog" class="modal">
+            <form onsubmit="addNewSlot()" method="dialog">
+              <div class="space-y-3">
+                <p class="text-2xl font-bold">Create New Slot</p>
+                <div class="space-y-2">
+                  <label for="slot-name" class="block text-sm font-medium"
+                    >Enter name</label
+                  >
+                  <input
+                    type="text"
+                    id="slot-name"
+                    class="bg-gray-50 border outline-none border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    placeholder="Slot name"
+                    required
+                  />
+                </div>
+
+                <button class="btn w-fit ml-auto block" type="submit">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </dialog>
+
+          <dialog data-bs-backdrop="static" id="deleteSlotDialog" class="modal">
+            <form method="dialog">
+              <div class="space-y-4">
+                <p class="text-2xl font-medium">Do you confirm to delete it?</p>
+
+                <button class="btn w-fit ml-auto block" type="submit">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </dialog>
+        </div>
+      </div>
+
+      <!-- slots container -->
+      <div class="py-14 px-24">
+        <h3 class="text-2xl font-bold mb-7">Your Games</h3>
+        <div id="slotsContainer" class="w-full grid grid-cols-4 gap-6">
+          <!-- <div id="1" class="w-full">
+            <div class="w-full bg-[#FF914D] py-2">
+              <p class="font-bold text-xl text-center uppercase text-[#1b1b1b]">
+                My slot 23344
+              </p>
+            </div>
+            <div class="w-full overflow-hidden">
+              <img src="./assets/gameover.jpg" class="" alt="" />
+            </div>
+
+            <div class="grid grid-cols-3 w-full">
+              <div class="w-full">
+                <a
+                  href="/test"
+                  class="w-full py-2 block text-lg text-center text-[#1b1b1b] font-medium bg-[#7ED957]"
+                  >Test</a
+                >
+              </div>
+
+              <div class="w-full">
+                <a
+                  href="/edit"
+                  class="w-full py-2 block text-lg text-center text-[#1b1b1b] font-medium bg-slate-200"
+                  >Edit</a
+                >
+              </div>
+
+              <div onclick="deleteFunc(1)" class="w-full cursor-pointer">
+                <p
+                  class="w-full py-2 block text-lg text-center text-[#1b1b1b] font-medium bg-[#FF3131]"
+                >
+                  Delete
+                </p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="./js/homelogic.js"></script>
+  </body>
+</html>

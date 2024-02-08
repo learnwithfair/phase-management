@@ -1,0 +1,782 @@
+{
+	"info": {
+		"_postman_id": "37927a9b-42ae-4076-926f-427252d91a21",
+		"name": "PhaseManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28423782"
+	},
+	"item": [
+		{
+			"name": "Slot-Table",
+			"item": [
+				{
+					"name": "create-slot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Mr. ABD",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/rahatul rabbi.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/_F_SlotSimulator/SERVER/api/table/create.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"_F_SlotSimulator",
+								"SERVER",
+								"api",
+								"table",
+								"create.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "display-All-slot",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/_F_SlotSimulator/SERVER/api/table/index.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"_F_SlotSimulator",
+								"SERVER",
+								"api",
+								"table",
+								"index.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-slot",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/_F_SlotSimulator/SERVER/api/table/delete.php?id=35",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"_F_SlotSimulator",
+								"SERVER",
+								"api",
+								"table",
+								"delete.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "35"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Text-Table",
+			"item": [
+				{
+					"name": "update-text",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "slot_id",
+									"value": "58",
+									"type": "text"
+								},
+								{
+									"key": "phase_no",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "Update Text",
+									"type": "text"
+								},
+								{
+									"key": "posX",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "posY",
+									"value": "400",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/_F_SlotSimulator/SERVER/api/text/update.php?id=34",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"_F_SlotSimulator",
+								"SERVER",
+								"api",
+								"text",
+								"update.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "34"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Button-Table",
+			"item": [
+				{
+					"name": "create-button",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "slot_id",
+									"value": "59",
+									"type": "text"
+								},
+								{
+									"key": "link_normal",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/button.png"
+								},
+								{
+									"key": "link_hover",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/button_over.png"
+								},
+								{
+									"key": "link_click",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/button_click.png"
+								},
+								{
+									"key": "text",
+									"value": "This is Button Text",
+									"type": "text"
+								},
+								{
+									"key": "posX",
+									"value": "400",
+									"type": "text"
+								},
+								{
+									"key": "posY",
+									"value": "600",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/_F_SlotSimulator/SERVER/api/button/create.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"_F_SlotSimulator",
+								"SERVER",
+								"api",
+								"button",
+								"create.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-button-params",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "slot_id",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "phase_no",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "Update Text",
+									"type": "text"
+								},
+								{
+									"key": "posX",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "posY",
+									"value": "400",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/_F_SlotSimulator/SERVER/api/text/update.php?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"_F_SlotSimulator",
+								"SERVER",
+								"api",
+								"text",
+								"update.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-button-files",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "link_normal",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/button.png"
+								},
+								{
+									"key": "link_hover",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/button_over.png"
+								},
+								{
+									"key": "link_click",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/button_click.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/_F_SlotSimulator/SERVER/api/button/update_files.php?id=13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"_F_SlotSimulator",
+								"SERVER",
+								"api",
+								"button",
+								"update_files.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Background-Table",
+			"item": [
+				{
+					"name": "create-background",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "slot_id",
+									"value": "59",
+									"type": "text"
+								},
+								{
+									"key": "phase_no",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "single_image",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/stage2portrait/bg_bonus_portrait.png",
+									"disabled": true
+								},
+								{
+									"key": "atlas",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/stage2portrait/bg_bonus_portrait.atlas"
+								},
+								{
+									"key": "json",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/stage2portrait/bg_bonus_portrait.json"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/stage2portrait/bg_bonus_portrait.png"
+								},
+								{
+									"key": "posX",
+									"value": "400",
+									"type": "text"
+								},
+								{
+									"key": "posY",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "width",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "height",
+									"value": "300",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/_F_SlotSimulator/SERVER/api/background/create.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"_F_SlotSimulator",
+								"SERVER",
+								"api",
+								"background",
+								"create.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-background-params",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "slot_id",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "phase_no",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "posX",
+									"value": "400",
+									"type": "text"
+								},
+								{
+									"key": "posY",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "width",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "height",
+									"value": "300",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/_F_SlotSimulator/SERVER/api/background/update_params.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"_F_SlotSimulator",
+								"SERVER",
+								"api",
+								"background",
+								"update_params.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-background-files",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "slot_id",
+									"value": "59",
+									"type": "text"
+								},
+								{
+									"key": "phase_no",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "single_image",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/stage2portrait/bg_bonus_portrait.png"
+								},
+								{
+									"key": "atlas",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "json",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/_F_SlotSimulator/SERVER/api/background/update_files.php?id=21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"_F_SlotSimulator",
+								"SERVER",
+								"api",
+								"background",
+								"update_files.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "21"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Elements-Table",
+			"item": [
+				{
+					"name": "create-element",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "slot_id",
+									"value": "59",
+									"type": "text"
+								},
+								{
+									"key": "phase_no",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "atlas",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/stage2portrait/bg_bonus_portrait.atlas"
+								},
+								{
+									"key": "json",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/stage2portrait/bg_bonus_portrait.json"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/stage2portrait/bg_bonus_portrait.png"
+								},
+								{
+									"key": "posX",
+									"value": "400",
+									"type": "text"
+								},
+								{
+									"key": "posY",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "scale",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "animation",
+									"value": "This is Animation Text",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "53533535",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/_F_SlotSimulator/SERVER/api/element/create.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"_F_SlotSimulator",
+								"SERVER",
+								"api",
+								"element",
+								"create.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-element-params",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "posX",
+									"value": "400",
+									"type": "text"
+								},
+								{
+									"key": "posY",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "scale",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "animation",
+									"value": "Updated",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "545243434",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/_F_SlotSimulator/SERVER/api/element/update_params.php?id=13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"_F_SlotSimulator",
+								"SERVER",
+								"api",
+								"element",
+								"update_params.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-element",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "slot_id",
+									"value": "70",
+									"type": "text"
+								},
+								{
+									"key": "phase_no",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "single_image",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/button.png",
+									"disabled": true
+								},
+								{
+									"key": "atlas",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/stage2desktop/bg_bonus_desktop.atlas"
+								},
+								{
+									"key": "json",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/stage2desktop/bg_bonus_desktop.json"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MD RAHATUL RABBI/Desktop/New folder/assets/stage2desktop/bg_bonus_desktop.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/_F_SlotSimulator/SERVER/api/element/delete.php?id=7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"_F_SlotSimulator",
+								"SERVER",
+								"api",
+								"element",
+								"delete.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Give-All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/_F_SlotSimulator/SERVER/api/give_all.php?id=59&phase=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"_F_SlotSimulator",
+						"SERVER",
+						"api",
+						"give_all.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "59"
+						},
+						{
+							"key": "phase",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

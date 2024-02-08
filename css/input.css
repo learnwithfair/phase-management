@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .section-btn {
+    @apply w-full flex items-center justify-between bg-slate-200 hover:bg-slate-300 p-4 rounded-lg;
+  }
+  .btn {
+    @apply text-base px-4 py-2 bg-indigo-500 font-semibold text-white rounded;
+  }
+  .game_expand {
+    /* @apply max-w-[calc(100vw-550px)]; */
+  }
+}
+.open_sidebar {
+  min-width: 550px;
+  display: block !important;
+  transition: all 500ms ease-in-out;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px;
+}
+
+.show_section {
+  display: flex;
+  width: "100%" !important;
+}
+.hide_section {
+  display: none !important;
+  width: 0 !important;
+}
+
+#pixi-container {
+  /* position: relative; */
+}
+
+:modal {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.modal {
+  max-width: 400px;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.modal::backdrop {
+  background-color: #dfe7f47e;
+  backdrop-filter: blur(12px);
+}
+
+.active_phase {
+  background-color: #7ed957 !important;
+  color: white !important;
+  /* padding: 16px 40px; */
+}
