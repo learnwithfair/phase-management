@@ -98,7 +98,10 @@ param- slot_id, file_normal, file_hover, file_click
 
 #### API 13: 
 GET: give_all? id=(Table 1 id) & phase= (1/2/3) 
-Return: JSON OBJECT {
+Return: 
+
+```bash
+JSON OBJECT {
     Background : {
        .... 
     },
@@ -112,3 +115,4 @@ Return: JSON OBJECT {
         ...
     }
 }
+```
